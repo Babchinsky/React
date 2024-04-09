@@ -1,0 +1,58 @@
+.container {
+  max-width: 800px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Выравнивание по центру */
+  margin-top: 15px;
+  padding: 20px; /* Поля вокруг контейнера */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тень */
+  border-radius: 50px;
+  
+}
+
+.container h1 {
+  color: #333; /* Цвет текста */
+  font-size: 24px; /* Размер шрифта */
+  font-weight: bold; /* Жирный шрифт */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+.container h2 {
+  color: #555; /* Цвет текста */
+  font-size: 20px; /* Размер шрифта */
+  font-weight: bold; /* Жирный шрифт */
+  margin-top: 20px; /* Отступ сверху */
+  margin-bottom: 8px; /* Отступ снизу */
+}
+
+.container h3 {
+  color: #777; /* Цвет текста */
+  font-size: 16px; /* Размер шрифта */
+  font-weight: bold; /* Жирный шрифт */
+  margin-top: 16px; /* Отступ сверху */
+  margin-bottom: 6px; /* Отступ снизу */
+}
+
+.container h4 {
+  color: #999; /* Цвет текста */
+  font-size: 14px; /* Размер шрифта */
+  font-weight: bold; /* Жирный шрифт */
+  margin-top: 14px; /* Отступ сверху */
+  margin-bottom: 4px; /* Отступ снизу */
+}
+
+.container p {
+  color: #666; /* Цвет текста */
+  font-size: 14px; /* Размер шрифта */
+  line-height: 1.5; /* Межстрочный интервал */
+}
+
+.photo-wrap{
+  display: flex;
+}
+.photo-wrap img {
+  max-width: 33%; /* Максимальная ширина изображений */
+  border-radius: 15px;
+  height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+  display: block; /* Отображение как блочный элемент */
+  margin-bottom: 10px; /* Отступ снизу между изображениями */
+}
+
