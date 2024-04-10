@@ -1,0 +1,44 @@
+.userListContainer {
+  margin: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.productContainer {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  transition: box-shadow 0.3s ease; /* добавляем плавный переход для эффекта */
+}
+
+.productContainer:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* добавляем тень при наведении */
+}
+
+.productName {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.productPrice,
+.productCategory,
+.productQuantity,
+.totalProductPrice {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.totalProductPrice{
+  font-size: 20px;
+  font-weight: 700;
+}
