@@ -27,3 +27,15 @@ a:hover{
 .title{
   color: green;
 }
+
+
+
+
+
+
+
+.row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}

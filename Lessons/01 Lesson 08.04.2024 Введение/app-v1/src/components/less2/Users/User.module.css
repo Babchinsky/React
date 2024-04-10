@@ -1,0 +1,8 @@
+.item{
+  padding: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
