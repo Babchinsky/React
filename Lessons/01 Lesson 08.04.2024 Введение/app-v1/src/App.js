@@ -5,7 +5,9 @@ import Navigation from './components/less2/Navigation'
 import Price from './components/less2/Price'
 import About from './components/less2/About/About'
 import Contact from './components/less2/Contact'
-import UserList from './components/less2/Users/UserList'
+// import UserList from './components/less2/Users/UserList'
+import Displaying_data from './components/less4/Displaying_data'
+import Product_list from './components/less4/Product_list'
 
 function App() {
 	return (
@@ -18,7 +20,8 @@ function App() {
 				</header>
 
 				<section>
-					<UserList/>
+					<Displaying_data/>
+					{/* <UserList/> */}
 				</section>
 
 

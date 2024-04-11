@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Product from './Product'
-import styles from './ProductList.module.css' // Подключаем модульные стили
+import styles from './ProductList.module.css' 
 import products from './products'
 
 function ProductList() {

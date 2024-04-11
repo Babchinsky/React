@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './ProductList.module.css'; // Подключаем модульные стили
+import styles from './ProductList.module.css'; 
 
 
 function Product(props) {
