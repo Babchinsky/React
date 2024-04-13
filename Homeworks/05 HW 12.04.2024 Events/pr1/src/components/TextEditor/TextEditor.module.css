@@ -1,0 +1,27 @@
+.buttons-row {
+  margin-bottom: 10px;
+}
+
+.buttons-row button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.buttons-row button.active {
+  background-color: #ccc;
+}
+
+.editor {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+}
+
