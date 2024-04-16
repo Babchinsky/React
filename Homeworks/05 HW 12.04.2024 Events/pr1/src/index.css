@@ -29,7 +29,7 @@ code {
 
 
 
-* {
+/* * {
 	border: 0;
 	box-sizing: border-box;
 	margin: 0;
@@ -55,11 +55,11 @@ input {
 body {
 	color: var(--fg);
 	height: 100vh;
-	display: grid;
+	/* display: grid; 
 	place-items: center;
 }
 
-/* Default */
+
 .theme {
 	display: flex;
 	align-items: center;
@@ -176,7 +176,7 @@ body {
 	outline: transparent;
 }
 
-/* Checked */
+
 .theme__toggle:checked {
 	background-color: hsl(198,90%,15%);
 }
@@ -232,4 +232,4 @@ body {
 	.theme__toggle:focus-visible {
 		box-shadow: 0 0 0 0.125em var(--primary);
 	}
-}
+} */

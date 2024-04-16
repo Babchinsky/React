@@ -1,0 +1,42 @@
+/* PhotoUploader.module.css */
+.mainContainer{
+  display: flex;
+}
+.container {
+  border-radius: 5px;
+  text-align: center;
+  /* position: relative; */
+  width: 100%;
+}
+
+.imageContainer {
+  border: 2px solid #000;
+  padding: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.imageContainer.dragging {
+  border: 2px dashed #000;
+}
+
+.imageContainer p {
+  margin: 0;
+}
+
+.controls {
+  /* position: absolute; */
+  /* bottom: 10px; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  width: 50%;
+}
+
+.controls label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.controls input[type='range'] {
+  width: 100%;
+}
