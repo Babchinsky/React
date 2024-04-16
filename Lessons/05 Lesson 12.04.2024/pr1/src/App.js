@@ -4,12 +4,12 @@ import React from 'react'
 // import BoldBtnRfc from './components/BoldBtnRfc'
 // import BoldBtnRcc from './components/BoldBtnRcc'
 // import Posts from './components/less6/Posts'
-import Form1 from './components/less6/Form1'
+// import Form1 from './components/less6/Form1'
 
 function App() {
 	return (
 		<>
-			<Form1/>
+			{/* <Form1/> */}
 			{/* <Counter /> */}
 			{/* <Counter2 /> */}
 			{/* <BoldBtnRfc />

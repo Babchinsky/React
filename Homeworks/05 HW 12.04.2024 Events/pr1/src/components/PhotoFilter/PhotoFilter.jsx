@@ -2,118 +2,125 @@ import React, { useState, useRef } from 'react'
 import styles from './PhotoFilter.module.css'
 
 const PhotoUploader = () => {
-	const [selectedFile, setSelectedFile] = useState(null)
-	const [imageURL, setImageURL] = useState(null)
-	const [dragging, setDragging] = useState(false)
-	const [brightness, setBrightness] = useState(100)
-	const [contrast, setContrast] = useState(100)
-	const [saturation, setSaturation] = useState(100)
-	const [hue, setHue] = useState(0)
-	const [blur, setBlur] = useState(0)
+	const [state, setState] = useState({
+		selectedFile: null,
+		imageURL: null,
+		dragging: false,
+		brightness: 100,
+		contrast: 100,
+		saturation: 100,
+		hue: 0,
+		blur: 0,
+	})
 	const fileInputRef = useRef(null)
 
 	const handleDragOver = event => {
 		event.preventDefault()
-		setDragging(true)
+		setState(prevState => ({ ...prevState, dragging: true }))
 	}
 
 	const handleDragEnter = event => {
 		event.preventDefault()
-		setDragging(true)
+		setState(prevState => ({ ...prevState, dragging: true }))
 	}
 
 	const handleDragLeave = () => {
-		setDragging(false)
+		setState(prevState => ({ ...prevState, dragging: false }))
 	}
 
 	const handleDrop = event => {
 		event.preventDefault()
-		setDragging(false)
+		setState(prevState => ({ ...prevState, dragging: false }))
 		const file = event.dataTransfer.files[0]
-		setSelectedFile(file)
-		if (file) {
-			const fileURL = URL.createObjectURL(file)
-			setImageURL(fileURL)
-		}
+		handleFile(file)
 	}
 
 	const handleFileChange = event => {
 		const file = event.target.files[0]
-		setSelectedFile(file)
-		if (file) {
-			const fileURL = URL.createObjectURL(file)
-			setImageURL(fileURL)
-		}
+		handleFile(file)
+	}
+
+	const handleFile = file => {
+		setState(prevState => ({
+			...prevState,
+			selectedFile: file,
+			imageURL: file ? URL.createObjectURL(file) : null,
+		}))
 	}
 
 	const handleClick = () => {
 		fileInputRef.current.click()
 	}
 
-	const handleBrightnessChange = event => {
-		setBrightness(event.target.value)
-	}
-
-	const handleContrastChange = event => {
-		setContrast(event.target.value)
-	}
-
-	const handleSaturationChange = event => {
-		setSaturation(event.target.value)
-	}
-
-	const handleHueChange = event => {
-		setHue(event.target.value)
-	}
-
-	const handleBlurChange = event => {
-		setBlur(event.target.value)
+	const handleSliderChange = (key, value) => {
+		setState(prevState => ({
+			...prevState,
+			[key]: value,
+		}))
 	}
 
 	const handleTagClick = tag => {
 		// Применяем соответствующий фильтр в зависимости от выбранного тега
 		switch (tag) {
 			case 'none':
-				setBrightness(100)
-				setContrast(100)
-				setSaturation(100)
-				setHue(0)
-				setBlur(0)
+				setState(prevState => ({
+					...prevState,
+					brightness: 100,
+					contrast: 100,
+					saturation: 100,
+					hue: 0,
+					blur: 0,
+				}))
 				break
 			case 'teal-white':
-				setBrightness(110)
-				setContrast(90)
-				setSaturation(120)
-				setHue(180)
-				setBlur(0)
+				setState(prevState => ({
+					...prevState,
+					brightness: 110,
+					contrast: 90,
+					saturation: 120,
+					hue: 180,
+					blur: 0,
+				}))
 				break
 			case 'teal-lightgreen':
-				setBrightness(100)
-				setContrast(120)
-				setSaturation(140)
-				setHue(90)
-				setBlur(0)
+				setState(prevState => ({
+					...prevState,
+					brightness: 100,
+					contrast: 120,
+					saturation: 140,
+					hue: 90,
+					blur: 0,
+				}))
 				break
 			case 'sepia':
-				setBrightness(100)
-				setContrast(90)
-				setSaturation(120)
-				setHue(30)
-				setBlur(0)
+				setState(prevState => ({
+					...prevState,
+					brightness: 100,
+					contrast: 90,
+					saturation: 120,
+					hue: 30,
+					blur: 0,
+				}))
 				break
 			case 'purple-sepia':
-				setBrightness(100)
-				setContrast(90)
-				setSaturation(150)
-				setHue(270)
-				setBlur(0)
+				setState(prevState => ({
+					...prevState,
+					brightness: 100,
+					contrast: 90,
+					saturation: 150,
+					hue: 270,
+					blur: 0,
+				}))
 				break
 			case 'cherry-icecream':
-				setBrightness(100)
-				setContrast(110)
-				setSaturation(90)
-				setHue(0)
-				setBlur(0)
+				setState(prevState => ({
+					...prevState,
+					brightness: 100,
+					contrast: 110,
+					saturation: 90,
+					hue: 0,
+					blur: 0,
+				}))
 				break
 			default:
 				break
@@ -121,6 +128,7 @@ const PhotoUploader = () => {
 	}
 
 	const handleSave = () => {
+		const { imageURL, brightness, contrast, saturation, hue, blur } = state
 		if (imageURL) {
 			const canvas = document.createElement('canvas')
 			const ctx = canvas.getContext('2d')
@@ -156,12 +164,11 @@ const PhotoUploader = () => {
 		}
 	}
 
-
 	return (
 		<div className={styles.mainContainer}>
 			<div
 				className={`${styles.container} ${styles.imageContainer} ${
-					dragging ? styles.dragging : ''
+					state.dragging ? styles.dragging : ''
 				}`}
 				onClick={handleClick}
 				onDragOver={handleDragOver}
@@ -169,13 +176,13 @@ const PhotoUploader = () => {
 				onDragLeave={handleDragLeave}
 				onDrop={handleDrop}
 			>
-				{imageURL ? (
+				{state.imageURL ? (
 					<img
-						src={imageURL}
+						src={state.imageURL}
 						alt='Выбранная фотография'
 						style={{
 							maxWidth: '100%',
-							filter: `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%) hue-rotate(${hue}deg) blur(${blur}px)`,
+							filter: `brightness(${state.brightness}%) contrast(${state.contrast}%) saturate(${state.saturation}%) hue-rotate(${state.hue}deg) blur(${state.blur}px)`,
 						}}
 					/>
 				) : (
@@ -197,8 +204,8 @@ const PhotoUploader = () => {
 					id='brightness'
 					min='0'
 					max='200'
-					value={brightness}
-					onChange={handleBrightnessChange}
+					value={state.brightness}
+					onChange={e => handleSliderChange('brightness', e.target.value)}
 				/>
 				<label htmlFor='contrast'>Контраст:</label>
 				<input
@@ -206,8 +213,8 @@ const PhotoUploader = () => {
 					id='contrast'
 					min='0'
 					max='200'
-					value={contrast}
-					onChange={handleContrastChange}
+					value={state.contrast}
+					onChange={e => handleSliderChange('contrast', e.target.value)}
 				/>
 				<label htmlFor='saturation'>Насыщенность:</label>
 				<input
@@ -215,8 +222,8 @@ const PhotoUploader = () => {
 					id='saturation'
 					min='0'
 					max='200'
-					value={saturation}
-					onChange={handleSaturationChange}
+					value={state.saturation}
+					onChange={e => handleSliderChange('saturation', e.target.value)}
 				/>
 				<label htmlFor='hue'>Тональность:</label>
 				<input
@@ -224,8 +231,8 @@ const PhotoUploader = () => {
 					id='hue'
 					min='0'
 					max='360'
-					value={hue}
-					onChange={handleHueChange}
+					value={state.hue}
+					onChange={e => handleSliderChange('hue', e.target.value)}
 				/>
 				<label htmlFor='blur'>Размытие:</label>
 				<input
@@ -233,8 +240,8 @@ const PhotoUploader = () => {
 					id='blur'
 					min='0'
 					max='20'
-					value={blur}
-					onChange={handleBlurChange}
+					value={state.blur}
+					onChange={e => handleSliderChange('blur', e.target.value)}
 				/>
 				<div className={styles.tags}>
 					<button onClick={() => handleTagClick('none')}>None</button>
