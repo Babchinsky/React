@@ -1,13 +1,12 @@
 import React from 'react'
-import {RouterProvider,createBrowserRouter} from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import NotFound from './pages/NotFound'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from './layout/Layout'
-import './App.css'
 import Product from './components/Product'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 import { ProductProvider } from './context/ProductContext'
+import './App.css'
+
 
 function App() {
   const router = createBrowserRouter([
@@ -24,14 +23,6 @@ function App() {
 					element: <Home />,
 				},
 				{
-					path: '/About',
-					element: <About />,
-				},
-				{
-					path: '/Contact',
-					element: <Contact />,
-				},
-				{
 					path: '/product/:id',
 					element: <Product />,
 				},
@@ -43,10 +34,9 @@ function App() {
 		},
 		{},
 	])
+
   return (
-    <>
-      <RouterProvider router={router}/>
-    </>
+    <RouterProvider router={router}/>
   )
 }
 

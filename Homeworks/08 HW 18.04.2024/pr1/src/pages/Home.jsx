@@ -3,11 +3,11 @@ import ProductList from '../components/ProductList'
 
 function Home() {
   return (
-    <>
-      <h1>Home</h1>
-      <ProductList/>
+		<>
+			{/* <h1>Home</h1> */}
+			<ProductList />
     </>
-  )
+	)
 }
 
 export default Home

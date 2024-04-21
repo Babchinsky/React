@@ -8,6 +8,9 @@ import Layout from './layout/Layout'
 import './App.css'
 import Product from './components/Product'
 import { ProductProvider } from './context/ProductContext'
+import AuthLayout from './layout/AuthLayout'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 function App() {
   const router = createBrowserRouter([
@@ -41,7 +44,20 @@ function App() {
 				},
 			],
 		},
-		{},
+		{
+			path: '/auth',
+			element: <AuthLayout />,
+			children: [
+				{
+					path: 'login',
+					element: <Login />,
+				},
+				{
+					path: 'register',
+					element: <Register/>
+				}
+			],
+		},
 	])
   return (
     <>

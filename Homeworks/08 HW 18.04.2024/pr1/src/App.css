@@ -1,0 +1,94 @@
+/* Основные стили */
+body {
+  font: 16px/1.5 Verdana, sans-serif;
+  background: #f2f2f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.item {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили заголовков и абзацев */
+.item h2 {
+  font-size: 1.5em;
+  margin: 0 0 15px;
+}
+
+.item p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Новые стили для ссылок */
+.item a {
+  text-decoration: none;
+  color: #333; /* Более темный, нейтральный цвет */
+  font-weight: bold; /* Более четкий текст */
+  border-bottom: 2px solid transparent; /* Плавный эффект подчеркивания */
+  transition: color 0.2s, border-bottom 0.2s;
+}
+
+.item a:hover {
+  color: #e94e77; /* Насыщенный розовый или другой яркий цвет */
+  border-bottom: 2px solid #e94e77; /* Подчеркивание при наведении */
+}
+
+
+
+.link {
+  text-decoration: none; /* Убираем стандартное подчеркивание */
+  color: inherit; /* Используем цвет родительского элемента */
+  transition: opacity 0.2s; /* Плавное изменение прозрачности */
+}
+
+.link:hover {
+  opacity: 0.8; /* Понижаем непрозрачность при наведении для эффекта */
+}
+
+/* Стили для item, h2, p, как в предыдущем примере */
+.item {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.item h2 {
+  font-size: 1.5em;
+  margin: 0 0 15px;
+}
+
+.item p {
+  font-size: 1em;
+  color: #666;
+}
