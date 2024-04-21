@@ -5,11 +5,11 @@ import Product from './components/Product'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import { ProductProvider } from './context/ProductContext'
+import AdminPanel from './components/AdminPanel'
 import './App.css'
 
-
 function App() {
-  const router = createBrowserRouter([
+	const router = createBrowserRouter([
 		{
 			path: '/',
 			element: (
@@ -27,17 +27,18 @@ function App() {
 					element: <Product />,
 				},
 				{
+					path: '/admin-panel',
+					element: <AdminPanel />,
+				},
+				{
 					path: '*',
 					element: <NotFound />,
 				},
 			],
 		},
-		{},
 	])
 
-  return (
-    <RouterProvider router={router}/>
-  )
+	return <RouterProvider router={router} />
 }
 
 export default App

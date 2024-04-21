@@ -3,7 +3,8 @@ import ProductItem from './ProductItem'
 import { useProducts } from '../context/ProductContext'
 
 function ProductList() {
-	const products = useProducts()
+	// const products = useProducts()
+	const { products} = useProducts()
 	console.log(products)
 
 	return (
