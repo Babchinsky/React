@@ -4,7 +4,7 @@ import { useProducts } from '../context/ProductContext'
 
 function Product() {
 	const { id } = useParams() // ловим id из поисковой строки
-	const products = useProducts()
+	const {products} = useProducts()
 	const product = products.find(item => item.id === parseInt(id, 10))
 
 	if (!product) {
