@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "alex123",
+      "password": "s3cr3t!"
+    },
+    {
+      "id": "2",
+      "username": "jennyBee",
+      "password": "bzzzzz1"
+    },
+    {
+      "id": "3",
+      "username": "codingMaster",
+      "password": "code1234"
+    },
+    {
+      "id": "4",
+      "username": "sarah_connor",
+      "password": "skynet42"
+    },
+    {
+      "id": "5",
+      "username": "neo_matrix",
+      "password": "trinity4ever"
+    },
+    {
+      "id": "6",
+      "username": "tony_stark",
+      "password": "ironman3000"
+    },
+    {
+      "id": "7",
+      "username": "bruce_wayne",
+      "password": "batman123"
+    },
+    {
+      "id": "8",
+      "username": "clark_kent",
+      "password": "superman4ever"
+    },
+    {
+      "id": "9",
+      "username": "diana_prince",
+      "password": "wonderwoman77"
+    },
+    {
+      "id": "10",
+      "username": "peter_parker",
+      "password": "spiderman2002"
+    },
+    {
+      "id": "0eb8",
+      "username": "oleksii",
+      "password": "Qwerty123"
+    }
+  ]
+}

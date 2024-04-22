@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import './App.css'
-import shuffleArray from './components/shuffleArray';
-import Timer from './components/Timer';
-import Card from './components/Card';
+import '../App.css'
+import shuffleArray from '../components/shuffleArray'
+import Timer from '../components/Timer'
+import Card from '../components/Card'
 
 const cardImages = ['1', '2', '3', '4', '5', '6', '7']
 // const totalCards = cardImages.length * 2;
 
-const App = () => {
+const Game = () => {
 	const [cards, setCards] = useState([])
 	const [openedCards, setOpenedCards] = useState([])
 	const [isGameRunning, setIsGameRunning] = useState(false)
@@ -89,4 +89,4 @@ const App = () => {
 	)
 }
 
-export default App
+export default Game
