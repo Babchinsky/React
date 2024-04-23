@@ -1,0 +1,77 @@
+.container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавлен эффект тени */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  transition: all 0.3s; /* Плавный переход */
+}
+
+.input:focus {
+  border-color: #4CAF50; /* Изменение цвета при фокусе */
+  outline: none; /* Удаление стандартной рамки */
+}
+
+.button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049; /* Темно-зеленый при наведении */
+}
+
+.button.disabled {
+  background-color: #ccc; /* Более светлый цвет */
+  color: #888; /* Более светлый цвет текста */
+  cursor: not-allowed; /* Указатель в виде "запрещено" */
+  pointer-events: none; /* Отключение событий курсора */
+}
+
+
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center; /* Выравнивание текста по центру */
+  font-weight: bold;
+}
+
+.message.success {
+  color: #155724; /* Темно-зеленый цвет текста */
+  background-color: #d4edda; /* Светло-зеленый фон */
+  border: 1px solid #c3e6cb; /* Зеленая граница */
+}
+
+.message.error {
+  color: #721c24; /* Темно-красный цвет текста */
+  background-color: #f8d7da; /* Светло-красный фон */
+  border: 1px solid #f5c6cb; /* Красная граница */
+}
