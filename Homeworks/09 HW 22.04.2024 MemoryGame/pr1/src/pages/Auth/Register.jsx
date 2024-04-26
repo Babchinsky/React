@@ -124,9 +124,7 @@ function Register() {
 					type='password'
 					id='password'
 					value={password}
-					onChange={e => {
-						setPassword(e.target.value)
-					}}
+					onChange={e => setPassword(e.target.value)}
 				/>
 
 				<label className={styles.label} htmlFor='confirm_password'>
@@ -137,9 +135,7 @@ function Register() {
 					type='password'
 					id='confirm_password'
 					value={confirmPassword}
-					onChange={e => {
-						handleConfirmPasswordChange(e)
-					}}
+					onChange={e => handleConfirmPasswordChange(e)}
 					onBlur={e => handleConfPassBlur(e)} // Устанавливаем фокус для отслеживания первого события
 				/>
 
@@ -163,8 +159,15 @@ function Register() {
 					</div>
 				)}
 			</form>
+
+			<div className={styles.loginLink}>
+				<p>
+					Уже есть аккаунт? <a href='login'>Войти</a>
+				</p>
+			</div>
 		</div>
 	)
+
 }
 
 export default Register

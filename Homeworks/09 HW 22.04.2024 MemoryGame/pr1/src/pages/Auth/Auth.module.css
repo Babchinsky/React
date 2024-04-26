@@ -75,3 +75,22 @@
   background-color: #f8d7da; /* Светло-красный фон */
   border: 1px solid #f5c6cb; /* Красная граница */
 }
+
+
+.loginLink {
+  text-align: center; /* Центрирование текста */
+  margin-top: 20px; /* Отступ сверху, чтобы отделить от формы */
+  color: #333; /* Темный цвет текста */
+}
+
+.loginLink a {
+  color: #4CAF50; /* Цвет ссылки - зеленый, как у кнопки */
+  text-decoration: none; /* Убираем подчеркивание по умолчанию */
+  font-weight: bold; /* Жирный шрифт для ссылки */
+  transition: color 0.3s; /* Плавный переход при наведении */
+}
+
+.loginLink a:hover {
+  color: #45a049; /* Изменение цвета при наведении */
+  text-decoration: underline; /* Подчеркивание при наведении */
+}

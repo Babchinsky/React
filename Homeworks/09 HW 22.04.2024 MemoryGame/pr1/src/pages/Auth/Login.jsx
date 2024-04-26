@@ -17,6 +17,9 @@ function Login() {
 
 		// Проверяем, существует ли пользователь с данным именем и паролем
 		if (userService.isUserWithPassword(username, password)) {
+			// Если да, сохраняем имя пользователя в sessionStorage
+			localStorage.setItem('loggedInUser', username)
+
 			// Если да, то перенаправляем на главную страницу
 			navigate('/')
 		} else {
@@ -70,6 +73,13 @@ function Login() {
 					</div>
 				)}
 			</form>
+
+			<div className={styles.loginLink}>
+				<p>
+					Нет аккаунта? <a href='register'>Зарегистрироваться</a>
+				</p>
+			</div>
+
 		</div>
 	)
 }

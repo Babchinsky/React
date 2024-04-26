@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": "bed9",
+      "username": "oleksii",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "0946",
+      "username": "boris",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "cf8e",
+      "username": "alex",
+      "password": "Qwerty123"
+    }
+  ],
+  "leaderboard": [
+    {
+      "id": "b524",
+      "username": "oleksii",
+      "time_minutes": 0,
+      "time_seconds": 7,
+      "cards_collected": 8
+    },
+    {
+      "id": "ba71",
+      "username": "boris",
+      "time_minutes": 0,
+      "time_seconds": 11,
+      "cards_collected": 8
+    },
+    {
+      "id": "c3e6",
+      "username": "boris",
+      "time_minutes": 0,
+      "time_seconds": 8,
+      "cards_collected": 8
+    },
+    {
+      "id": "ed8a",
+      "username": "boris",
+      "time_minutes": 0,
+      "time_seconds": 10,
+      "cards_collected": 8
+    }
+  ]
+}

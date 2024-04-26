@@ -1,123 +1,18 @@
-// import React, { useState, useEffect } from 'react'
-// import '../App.css'
-// import shuffleArray from '../components/shuffleArray'
-// import Timer from '../components/Timer'
-// import Card from '../components/Card'
-
-// const cardImages = ['1', '2', '3', '4', '5', '6', '7']
-// // const totalCards = cardImages.length * 2;
-
-// const Game = () => {
-// 	const [cards, setCards] = useState([])
-// 	const [openedCards, setOpenedCards] = useState([])
-// 	const [isGameRunning, setIsGameRunning] = useState(false)
-// 	const [gameWon, setGameWon] = useState(false)
-
-// 	useEffect(() => {
-// 		if (isGameRunning) {
-// 			const shuffledCards = shuffleArray([...cardImages, ...cardImages])
-// 			const initialCards = shuffledCards.map(value => ({
-// 				value,
-// 				isFlipped: false,
-// 				isMatched: false,
-// 			}))
-// 			setCards(initialCards)
-// 		}
-// 	}, [isGameRunning])
-
-// 	const handleCardClick = index => {
-// 		if (isGameRunning && !cards[index].isFlipped && openedCards.length < 2) {
-// 			const updatedCards = [...cards]
-// 			updatedCards[index].isFlipped = true
-
-// 			const updatedOpenedCards = [...openedCards, index]
-// 			setOpenedCards(updatedOpenedCards)
-
-// 			if (updatedOpenedCards.length === 2) {
-// 				const [firstIndex, secondIndex] = updatedOpenedCards
-// 				if (cards[firstIndex].value !== cards[secondIndex].value) {
-// 					setTimeout(() => {
-// 						updatedCards[firstIndex].isFlipped = false
-// 						updatedCards[secondIndex].isFlipped = false
-// 						setCards(updatedCards)
-// 						setOpenedCards([])
-// 					}, 750)
-// 				} else {
-// 					updatedCards[firstIndex].isMatched = true
-// 					updatedCards[secondIndex].isMatched = true
-// 					setCards(updatedCards)
-// 					setOpenedCards([])
-// 				}
-// 			}
-
-// 			setCards(updatedCards)
-// 		}
-// 	}
-
-// 	useEffect(() => {
-// 		if (cards.length > 0 && cards.every(card => card.isMatched)) {
-// 			setGameWon(true)
-// 			setIsGameRunning(false)
-// 		}
-// 	}, [cards])
-
-// 	const startGame = () => {
-// 		setGameWon(false)
-// 		setOpenedCards([])
-// 		setIsGameRunning(true)
-// 	}
-
-// 	return (
-// 		<div className='app'>
-// 			<Timer isRunning={isGameRunning} />
-// 			{gameWon && <div className='win-message'>Поздравляю, вы выиграли!</div>}
-// 			<div className='card-container'>
-// 				{cards.map((card, index) => (
-// 					<Card
-// 						key={index}
-// 						value={card.value}
-// 						isFlipped={card.isFlipped}
-// 						isMatched={card.isMatched}
-// 						onClick={() => handleCardClick(index)}
-// 					/>
-// 				))}
-// 			</div>
-// 			<button onClick={startGame}>
-// 				{isGameRunning ? 'Закончить' : 'Начать'}
-// 			</button>
-// 		</div>
-// 	)
-// }
-
-// export default Game
-
-// import React, { useState, useRef, useEffect } from 'react'
-// import '../App.css'
-// import shuffleArray from './components/shuffleArray'
-// import Timer, { timerValues } from './components/Timer'
-// import Card from './components/Card'
-
 import React, { useState, useRef, useEffect } from 'react'
 import '../App.css'
 import shuffleArray from '../components/shuffleArray'
-import Timer, {timerValues} from '../components/Timer'
+import Timer, { timerValues } from '../components/Timer'
 import Card from '../components/Card'
-
+import { useNavigate } from 'react-router-dom' // Добавлен useNavigate для перенаправления
+import LeaderService from '../services/leaderService'
 
 let cardImages = ['1', '2', '3', '4', '5', '6', '7']
-const totalCards = cardImages.length * 2
+// const totalCards = cardImages.length * 2
 
 const App = () => {
-	const [darkTheme, setDark] = useState(false)
-	const handleCheck = () => {
-		setDark(!darkTheme)
-		toggleTheme()
-	}
-	const toggleTheme = () => {
-		const themeToggle = document.getElementById('theme-toggle')
-		const body = document.body
-		body.classList.toggle('dark-mode')
-	}
+	const leaderService = LeaderService() // Инициализация сервиса
+	const navigate = useNavigate() // Инициализация навигации
+	const [loggedInUser, setLoggedInUser] = useState(null) // Новый стейт для отслеживания пользователя
 
 	const [audioPlaying, setAudioPlaying] = useState(false)
 	const audioRef = useRef(null)
@@ -139,7 +34,16 @@ const App = () => {
 	const [Kol, setKol] = useState(3)
 	const [Animate, setAnimate] = useState(false)
 	const [Total, setTotal] = useState(0)
+
+
+
 	useEffect(() => {
+		const user = localStorage.getItem('loggedInUser')
+		if (user) {
+			setLoggedInUser(user)
+		} else {
+			// navigate('/Login')
+		}
 		if (isGameRunning) {
 			const shuffledCards = shuffleArray([...cardImages, ...cardImages])
 			const initialCards = shuffledCards.map(value => ({
@@ -150,6 +54,12 @@ const App = () => {
 			setCards(initialCards)
 		}
 	}, [isGameRunning])
+
+	const handleLogout = () => {
+		localStorage.removeItem('loggedInUser') // Удаление пользователя из сессии
+		setLoggedInUser(null) // Обновление стейта
+		// navigate('/')
+	}
 
 	const handleCardClick = index => {
 		if (isGameRunning && !cards[index].isFlipped && openedCards.length < 2) {
@@ -227,6 +137,21 @@ const App = () => {
 			console.log(timerValues.remainderSeconds)
 			setIsGameRunning(false)
 		}
+
+		leaderService
+			.addLeader(
+				loggedInUser,
+				timerValues.minutes,
+				timerValues.remainderSeconds,
+				Total
+			)
+			.then(() => {
+				console.log('Added to leaderboard')
+				// navigate('leaderboard')
+			})
+			.catch(error => {
+				console.error('Error adding to leaderboard:', error)
+			})
 	}, [cards])
 
 	const startGame = () => {
@@ -261,21 +186,19 @@ const App = () => {
 
 	return (
 		<div className='app'>
+			{/* {loggedInUser ? (
+				<>
+					<h3>Привет, {loggedInUser}!</h3>
+					<button onClick={handleLogout}>Logout</button>{' '}
+					
+				</>
+			) : (
+				<h3>Вы не вошли в систему</h3>
+			)} */}
 			<h3>
 				Количество showAll {Kol} Количество нажатых карточек {Total}
 			</h3>
 			<h2>Select number of cards</h2>
-			<div class='checkbox-wrapper-5'>
-				<div class='check'>
-					<input
-						id='check-5'
-						type='checkbox'
-						checked={!darkTheme}
-						onChange={handleCheck}
-					/>
-					<label for='check-5'></label>
-				</div>
-			</div>
 
 			<select
 				style={{ height: 30 + 'px', fontSize: 24 + 'px' }}
