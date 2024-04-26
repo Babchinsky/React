@@ -1,0 +1,39 @@
+.container {
+	margin: 40px auto;
+	padding: 20px;
+	max-width: 600px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Добавлен эффект тени */
+	text-align: center; /* Центрирование текста внутри контейнера */
+}
+
+.heading {
+	font-size: 1.8em;
+	color: #333;
+}
+
+.leaderList {
+	list-style-type: decimal; /* Нумерованный список */
+	padding-left: 20px;
+	text-align: left; /* Выровнять элементы списка влево */
+}
+
+.leaderItem {
+	padding: 10px;
+	border-bottom: 1px solid #ddd; /* Добавить границу под элементом */
+}
+
+.leaderItem strong {
+	color: #555; /* Цвет для жирного шрифта */
+}
+
+.noLeaders {
+	font-size: 1.2em;
+	color: #888; /* Цвет для текста "No leaders found" */
+}
+
+.none_dark_mode {
+	color: #000000;
+}

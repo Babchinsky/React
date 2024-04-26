@@ -1,0 +1,172 @@
+{
+  "users": [
+    {
+      "id": "bed9",
+      "username": "oleksii",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "52a6",
+      "username": "boris",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "8fe6",
+      "username": "stas",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "4cb9",
+      "username": "vlad",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "f9e7",
+      "username": "dasha",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "0696",
+      "username": "alex",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "7188",
+      "username": "boris2",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "9bcd",
+      "username": "jimmy",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "5119",
+      "username": "jimmy2",
+      "password": "qWERTY123"
+    },
+    {
+      "id": "b33f",
+      "username": "jimmy3",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "dbc4",
+      "username": "Jimmy4",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "0b2c",
+      "username": "alex23",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "2c3c",
+      "username": "alex24",
+      "password": "qWERTY123"
+    },
+    {
+      "id": "b237",
+      "username": "alex25",
+      "password": "Qwerty123"
+    },
+    {
+      "id": "cd69",
+      "username": "alex26",
+      "password": "Qwerty123"
+    }
+  ],
+  "leaderboard": [
+    {
+      "id": "b524",
+      "username": "oleksii",
+      "time_minutes": 0,
+      "time_seconds": 7,
+      "cards_collected": 8
+    },
+    {
+      "id": "6de5",
+      "username": "boris",
+      "time_minutes": 0,
+      "time_seconds": 9,
+      "cards_collected": 8
+    },
+    {
+      "id": "f26c",
+      "username": "oleksii",
+      "time_minutes": 0,
+      "time_seconds": 4,
+      "cards_collected": 6
+    },
+    {
+      "id": "fee2",
+      "username": "oleksii",
+      "time_minutes": 0,
+      "time_seconds": 5,
+      "cards_collected": 6
+    },
+    {
+      "id": "4195",
+      "username": "oleksii",
+      "time_minutes": 0,
+      "time_seconds": 4,
+      "cards_collected": 4
+    },
+    {
+      "id": "1341",
+      "username": "oleksii",
+      "time_minutes": 0,
+      "time_seconds": 4,
+      "cards_collected": 6
+    },
+    {
+      "id": "2ba9",
+      "username": "oleksii",
+      "time_minutes": 0,
+      "time_seconds": 5,
+      "cards_collected": 6
+    },
+    {
+      "id": "06de",
+      "username": "oleksii",
+      "time_minutes": 0,
+      "time_seconds": 3,
+      "cards_collected": 4
+    },
+    {
+      "id": "8c67",
+      "username": "oleksii",
+      "time_minutes": 0,
+      "time_seconds": 5,
+      "cards_collected": 8
+    },
+    {
+      "id": "c120",
+      "username": "alex25",
+      "time_minutes": 0,
+      "time_seconds": 4,
+      "cards_collected": 4
+    },
+    {
+      "id": "5d90",
+      "username": "alex25",
+      "time_minutes": 1,
+      "time_seconds": 29,
+      "cards_collected": 24
+    },
+    {
+      "id": "fadb",
+      "username": "alex25",
+      "time_minutes": 0,
+      "time_seconds": 10,
+      "cards_collected": 6
+    },
+    {
+      "id": "4afa",
+      "username": "alex26",
+      "time_minutes": 0,
+      "time_seconds": 4,
+      "cards_collected": 6
+    }
+  ]
+}
